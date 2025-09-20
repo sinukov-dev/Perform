@@ -5,7 +5,14 @@
 		<meta charset="utf-8" />
 
 		<script>
-			
+			try {
+				if (localStorage.get('__framer_force_showing_editorbar_since')) {
+					const n = document.createElement('link')
+					n.rel = 'modulepreload'
+					n.href = 'https://framer.com/edit/init.mjs'
+					document.head.appendChild(n)
+				}
+			} catch (e) {}
 		</script>
 		<!-- Start of headStart -->
 
@@ -42,7 +49,7 @@
 
 		<style data-framer-font-css>
 			#__framer-editorbar-container {
-				display: none;
+				display: none !important;
 			}
 			@font-face {
 				font-family: 'Inter';
@@ -12522,5 +12529,3 @@
 		<!-- End of bodyEnd -->
 	</body>
 </html>
-
-
